@@ -1,0 +1,53 @@
+select * from information_schema.tables;
+
+
+--> Databases - Store data
+--> Database will includes several objects like TABLES, INDEX, SCHEMA, VIEWS
+	-- , TRIGGERS, PROCEDURES etc....
+-- In between the Database and database objects there is another layer 
+	-- which is called SCHEMA
+
+--> DATABASE --> SCHEMA --> TABLES/PROCEDURES/VIEWS etc etc...
+
+
+	
+
+create database demo;
+
+select * from UPI_TRANSACTIONS;
+
+-- Problems 
+1. Display 5 sample transactions.
+2. Display the first 20 transactions.
+3. Fetch the transactions worth less than 100 INR. Display only the amount and
+merchant category.
+4. How many transactions have happened in total?
+5. How many transactions have happened in Karnataka?
+
+--> SELECT command is used to read/fetch the data from the database 
+SELECT -- mention the fields which you want to fetch  
+FROM   -- the table where the data is stored 
+WHERE  -- mention the filters here
+
+
+-- 1. Display 5 sample transactions.
+select *
+from upi_transactions
+limit 5
+
+2. Display the first 20 transactions.
+select *
+from upi_transactions
+order by timestamp
+limit 20
+
+3. Fetch the transactions worth less than 100 INR. Display only the amount and
+merchant category.
+
+select amount_inr, merchant_category
+from upi_transactions
+where amount_inr < 100
+
+
+
+
